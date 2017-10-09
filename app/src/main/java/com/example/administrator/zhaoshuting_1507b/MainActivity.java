@@ -34,11 +34,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-              Intent in=new Intent(MainActivity.this,Main2Activity.class);
+//                            Intent in=new Intent(MainActivity.this,Main2Activity.class);
 
-                in.putExtra(TAG,"success");
 
-                startActivity(in);
+                Intent intent=null;
+
+                intent=new Intent();
+
+                intent.setClass(MainActivity.this,Main2Activity.class);
+
+                intent.putExtra(TAG,"success");
+
+                startActivity(intent);
             }
         });
     }
