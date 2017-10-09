@@ -7,38 +7,47 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
 
-    public final static  String TAG="NEXT";
     Button bnt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        initBnt();
+        setContentView(R.layout.activity_main2);
 
         Intent intent = getIntent();
 
-        String stringExtra = intent.getStringExtra(MainActivity.TAG);
+         String stringExtra = intent.getStringExtra(MainActivity.TAG);
 
         Toast.makeText(this,stringExtra,Toast.LENGTH_LONG).show();
+
+        initButton();
+
+
+
+
+
+
+
+
 
 
     }
 
-    private void initBnt() {
-        bnt= (Button) findViewById(R.id.next);
+    private void initButton() {
+
+        bnt= (Button) findViewById(R.id.back);
 
         bnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-              Intent in=new Intent(MainActivity.this,Main2Activity.class);
+                Intent in=new Intent(Main2Activity.this,MainActivity.class);
 
-                in.putExtra(TAG,"success");
+                in.putExtra(MainActivity.TAG,"我回来了");
 
                 startActivity(in);
+
             }
         });
     }
