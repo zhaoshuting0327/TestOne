@@ -1,5 +1,6 @@
 package com.example.administrator.zhaoshuting_1507b;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,11 +38,16 @@ public class MainActivity extends AppCompatActivity {
 //                            Intent in=new Intent(MainActivity.this,Main2Activity.class);
 
 
-                Intent intent=null;
+            /*    Intent intent=null;
 
                 intent=new Intent();
 
-                intent.setClass(MainActivity.this,Main2Activity.class);
+                intent.setClass(MainActivity.this,Main2Activity.class);*/
+
+                Intent intent=new Intent();
+                ComponentName com=new ComponentName(MainActivity.this,Main2Activity.class);
+
+                intent.setComponent(com);
 
                 intent.putExtra(TAG,"success");
 
